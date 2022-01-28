@@ -1,0 +1,23 @@
+
+static void addBuildscript(Project project) {
+    project.allprojects {
+        repositories {
+            jcenter()
+            flatDir {
+                dirs 'libs'
+            }
+            maven { url "https://jitpack.io" }
+        }
+    }
+}
+
+gradle.rootProject {
+    it.afterEvaluate {
+        it.allprojects {
+            addBuildscript(it)
+        }
+    }
+}
+
+include ':launcher', ':unityLibrary'
+**INCLUDES**
