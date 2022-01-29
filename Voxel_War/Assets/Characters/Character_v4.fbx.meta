@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 93d0a95e88755c54d81992af6101b834
+guid: ec1ed6d22ccc88e4092e687079725683
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -13,17 +13,29 @@ ModelImporter:
       74: 2667949614841947897
     second: Walk
   - first:
-      74: 4893401861464094108
-    second: Fight_pose
-  - first:
       74: 1615032066826313687
     second: Punch_upper
+  - first:
+      74: -949944433518821970
+    second: Punch_2.001
   - first:
       74: 95229962470898221
     second: Punch_1
   - first:
-      74: -949944433518821970
-    second: Punch_2.001
+      74: -4630339522487117836
+    second: Die
+  - first:
+      74: 8273325049105940540
+    second: Dead
+  - first:
+      74: 4893401861464094108
+    second: Fight_pose
+  - first:
+      74: -1165256849672007640
+    second: "\uC544\uB9C8\uD29C\uC5B4|Dead"
+  - first:
+      74: 8206791954344412533
+    second: "\uC544\uB9C8\uD29C\uC5B4|Die"
   - first:
       74: 2057967419306038549
     second: "\uC544\uB9C8\uD29C\uC5B4|Fight_pose"
@@ -42,6 +54,9 @@ ModelImporter:
   - first:
       74: -9178764447734441153
     second: "\uC544\uB9C8\uD29C\uC5B4|Walk"
+  - first:
+      74: -2535306224717336224
+    second: "\uC544\uB9C8\uD29C\uC5B4|Punch_1"
   externalObjects: {}
   materials:
     materialImportMode: 2
