@@ -3,14 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
  
 public class Player : MonoBehaviour {
-    private float moveSpeed = 1f;
+    private float moveSpeed = 0.4f;
+    private float rotationSpeed = 5f;
+    private Vector3 direction;
     public FloatingJoystick floatingJoystick;
-    public Rigidbody rb;
+    Rigidbody rb;
+    Animator animator;
 
-    public void FixedUpdate()
-    {
-        Vector3 direction = Vector3.forward * floatingJoystick.Vertical + Vector3.right * floatingJoystick.Horizontal;
+    void Awake(){
+        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+    }
+
+    void FixedUpdate(){
+        direction = Vector3.forward * floatingJoystick.Vertical + Vector3.right * floatingJoystick.Horizontal;
         rb.position += direction * moveSpeed;
-        //Debug.Log(direction);
+        if(direction != Vector3.zero){
+            float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+
+            rb.rotation = Quaternion.Euler(0, angle, 0);
+        }
+
+        AnimatonUpdate();
+    }
+
+    void AnimatonUpdate(){
+        if(direction == Vector3.zero){
+            animator.SetBool("isRunning", false);
+        }
+        else{
+            animator.SetBool("isRunning", true);
+        }
     }
 }
