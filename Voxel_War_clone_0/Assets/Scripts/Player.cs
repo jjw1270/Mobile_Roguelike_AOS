@@ -3,22 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
  
 public class Player : MonoBehaviour {
- 
-    Rigidbody rb;
- 
-    void Start()
+    private float moveSpeed = 1f;
+    public FloatingJoystick floatingJoystick;
+    public Rigidbody rb;
+
+    public void FixedUpdate()
     {
-        rb = GetComponent<Rigidbody>();
-    }
- 
- 
-    void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
- 
-        Vector3 movement = new Vector3(moveHorizontal*2f, 0, moveVertical*2f);
- 
-        rb.AddForce(movement);
+        Vector3 direction = Vector3.forward * floatingJoystick.Vertical + Vector3.right * floatingJoystick.Horizontal;
+        rb.position += direction * moveSpeed;
+        //Debug.Log(direction);
     }
 }
