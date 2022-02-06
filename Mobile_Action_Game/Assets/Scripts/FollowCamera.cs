@@ -19,6 +19,6 @@ public class FollowCamera : MonoBehaviour
         if(target_ == null)
             return;
         transform.position = target_.position + CamPosition;
-        transform.localRotation = Quaternion.Euler(CamRotation);
+        //transform.localRotation = Quaternion.Euler(CamRotation);
     }
 }
